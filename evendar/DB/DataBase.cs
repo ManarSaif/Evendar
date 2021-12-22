@@ -23,7 +23,6 @@ namespace evendar.DB
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
-
             cn.Close();
             return dt;
         }
@@ -40,7 +39,7 @@ namespace evendar.DB
         }
         public static bool checkUsername(string username)
         {
-            return ExecuteQuery("checkUsername", new SqlParameter("@username", username)).Rows[0][0].ToString() != null;
+            return ExecuteQuery("checkUsername", new SqlParameter("@username", username)).Rows.Count > 0;
         }
 
         public static string getUsername(string email)
@@ -55,12 +54,16 @@ namespace evendar.DB
 
         public static bool checkEmail(string email)
         {
-            return ExecuteQuery("checkEmail", new SqlParameter("@email", email)).Rows[0][0].ToString() != null;
+            return  ExecuteQuery("checkEmail", new SqlParameter("@email", email)).Rows.Count>0;
+            
+            
         }
 
         public static string login(string username, string password)
         {
-            return ExecuteQuery("login", new SqlParameter("@username", username), new SqlParameter("@password", password)).Rows[0][0].ToString();
+             return ExecuteQuery("login", new SqlParameter("@username", username), new SqlParameter("@password", password)).Rows[0][0].ToString();
+            
+
         }
 
 
@@ -71,9 +74,9 @@ namespace evendar.DB
                 new SqlParameter("@email", email),
                 new SqlParameter("@name", name));
         }
-        public static void changePass(string username, string password)
+        public static void changePass(string email, string password)
         {
-            Execute("changePassword", new SqlParameter("@username", username), new SqlParameter("@password", password));
+            Execute("changePassword", new SqlParameter("@email", email), new SqlParameter("@password", password));
         }
 
         public static void changeEmail(string username, string newEmail)

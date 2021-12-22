@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using evendar.DB;
+using evendar.Accounts;
 using evendar.MainPage;
 namespace evendar
 {
@@ -25,7 +26,7 @@ namespace evendar
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtUsername.Text)&& string.IsNullOrEmpty(txtName.Text) && string.IsNullOrEmpty(txtEmail.Text) && string.IsNullOrEmpty(txtPassword.Text))
+            if (string.IsNullOrEmpty(txtUsername.Text)&& string.IsNullOrEmpty(txtName.Text) && string.IsNullOrEmpty(txtEmail.Text)&& string.IsNullOrEmpty(txtPassword.Text))
             {
                 MessageBox.Show("Fields Are Empty", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtName.Focus();
@@ -55,13 +56,11 @@ namespace evendar
                 txtEmail.Focus();
                 return;
             }
-            
-                
-            
+
+
             
             try
             {
-
                 if (DataBase.checkUsername(txtUsername.Text) == true)
                 {
                     MessageBox.Show("This Username is Unavilabe");
@@ -74,8 +73,11 @@ namespace evendar
                     txtEmail.Focus();
                     return;
                 }
-                else
-                    DataBase.register(txtUsername.Text, txtPassword.Text,txtName.Text,txtEmail.Text);                
+                DataBase.register(txtUsername.Text, txtPassword.Text,txtName.Text,txtEmail.Text);
+                this.Hide();
+                Form form = new FormInterestedIn();
+                form.ShowDialog(this);
+                this.Close();
             }
             catch (Exception ex)    
             {

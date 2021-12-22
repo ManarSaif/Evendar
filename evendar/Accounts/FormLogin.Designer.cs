@@ -122,6 +122,7 @@
             this.labelWrong.TabIndex = 2;
             this.labelWrong.Text = "Username Or assword is incorrecr";
             this.labelWrong.Visible = false;
+            this.labelWrong.Click += new System.EventHandler(this.labelWrong_Click);
             // 
             // btnClear
             // 

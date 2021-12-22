@@ -9,10 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using evendar.MainPage;
 using evendar.DB;
+using FluentEmail.Smtp;
+using System.Net;
+using System.Net.Mail;
+using AE.Net.Mail;
+using MailMessage = System.Net.Mail.MailMessage;
+using MailPriority = System.Net.Mail.MailPriority;
+
 namespace evendar
 {
     public partial class FormRecoverAccount : Form
     {
+        public string code="";
         public FormRecoverAccount()
         {
             InitializeComponent();
@@ -20,7 +28,7 @@ namespace evendar
 
         private void FormRecoverAccount_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -37,24 +45,21 @@ namespace evendar
         {
 
         }
-
         private void btnSendCode_Click(object sender, EventArgs e)
         {
-            bool i= DataBase.checkEmail(txtEmail.Text);
-            if (i==true)
-            {
-                //random number and send as email
-            }
-            else
-            {
-                labelWarning.Visible = true;   
-            }
+           
+           
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void txtEmail_TextChanged(object sender, EventArgs e)
         {
-            txtEmail.Clear();
-            labelWarning.Visible = false;
+
+        }
+
+        private void userControlCheckEmail1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
+

@@ -28,86 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSendCode = new System.Windows.Forms.Button();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.labelWarning = new System.Windows.Forms.Label();
-            this.labelEmail = new System.Windows.Forms.Label();
-            this.btnClear = new System.Windows.Forms.Button();
+            this.userControlChangePassword1 = new evendar.UserControlChangePassword();
+            this.userControlCode1 = new evendar.UserControlCode();
+            this.userControlGetUsername1 = new evendar.UserControlGetUsername();
+            this.userControlCheckEmail1 = new evendar.Accounts.UserControlCheckEmail();
             this.SuspendLayout();
             // 
-            // btnSendCode
+            // userControlChangePassword1
             // 
-            this.btnSendCode.Location = new System.Drawing.Point(172, 300);
-            this.btnSendCode.Name = "btnSendCode";
-            this.btnSendCode.Size = new System.Drawing.Size(137, 29);
-            this.btnSendCode.TabIndex = 10;
-            this.btnSendCode.Text = "Send Code";
-            this.btnSendCode.UseVisualStyleBackColor = true;
-            this.btnSendCode.Click += new System.EventHandler(this.btnSendCode_Click);
+            this.userControlChangePassword1.Location = new System.Drawing.Point(-4, 0);
+            this.userControlChangePassword1.Name = "userControlChangePassword1";
+            this.userControlChangePassword1.Size = new System.Drawing.Size(548, 546);
+            this.userControlChangePassword1.TabIndex = 11;
             // 
-            // txtEmail
+            // userControlCode1
             // 
-            this.txtEmail.Location = new System.Drawing.Point(217, 231);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(125, 27);
-            this.txtEmail.TabIndex = 9;
+            this.userControlCode1.Location = new System.Drawing.Point(-4, 0);
+            this.userControlCode1.Name = "userControlCode1";
+            this.userControlCode1.Size = new System.Drawing.Size(488, 534);
+            this.userControlCode1.TabIndex = 12;
             // 
-            // labelWarning
+            // userControlGetUsername1
             // 
-            this.labelWarning.AutoSize = true;
-            this.labelWarning.BackColor = System.Drawing.SystemColors.Control;
-            this.labelWarning.ForeColor = System.Drawing.Color.Red;
-            this.labelWarning.Location = new System.Drawing.Point(90, 98);
-            this.labelWarning.Name = "labelWarning";
-            this.labelWarning.Size = new System.Drawing.Size(263, 20);
-            this.labelWarning.TabIndex = 7;
-            this.labelWarning.Text = "This Email Dosen\'t Exist In Our System!";
-            this.labelWarning.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelWarning.Visible = false;
+            this.userControlGetUsername1.Location = new System.Drawing.Point(-4, 0);
+            this.userControlGetUsername1.Name = "userControlGetUsername1";
+            this.userControlGetUsername1.Size = new System.Drawing.Size(540, 534);
+            this.userControlGetUsername1.TabIndex = 13;
             // 
-            // labelEmail
+            // userControlCheckEmail1
             // 
-            this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(116, 230);
-            this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(46, 20);
-            this.labelEmail.TabIndex = 8;
-            this.labelEmail.Text = "email";
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(172, 353);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(137, 29);
-            this.btnClear.TabIndex = 11;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.button1_Click);
+            this.userControlCheckEmail1.Location = new System.Drawing.Point(0, 0);
+            this.userControlCheckEmail1.Name = "userControlCheckEmail1";
+            this.userControlCheckEmail1.Size = new System.Drawing.Size(560, 538);
+            this.userControlCheckEmail1.TabIndex = 14;
+            this.userControlCheckEmail1.Load += new System.EventHandler(this.userControlCheckEmail1_Load);
             // 
             // FormRecoverAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(510, 487);
-            this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnSendCode);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.labelWarning);
-            this.Controls.Add(this.labelEmail);
+            this.ClientSize = new System.Drawing.Size(845, 537);
+            this.Controls.Add(this.userControlCheckEmail1);
+            this.Controls.Add(this.userControlGetUsername1);
+            this.Controls.Add(this.userControlCode1);
+            this.Controls.Add(this.userControlChangePassword1);
             this.Name = "FormRecoverAccount";
             this.Text = "FormRecoverAccount";
             this.Load += new System.EventHandler(this.FormRecoverAccount_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private Button btnSendCode;
-        private TextBox txtEmail;
-        private Label labelWarning;
-        private Label labelEmail;
-        private Button btnClear;
+        private UserControlChangePassword userControlChangePassword1;
+        private UserControlCode userControlCode1;
+        private UserControlGetUsername userControlGetUsername1;
+        private Accounts.UserControlCheckEmail userControlCheckEmail1;
     }
 }

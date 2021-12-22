@@ -26,7 +26,19 @@ namespace evendar
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-             try
+            if (string.IsNullOrEmpty(txtUsername.Text))
+            {
+                MessageBox.Show("please enter your username", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtUsername.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtPassword.Text))
+            {
+                MessageBox.Show("please enter your Password", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtPassword.Focus();
+                return;
+            }
+            try
             {
                 string log = DataBase.login(txtUsername.Text, txtPassword.Text);
                 if (log == txtPassword.Text)
@@ -64,6 +76,11 @@ namespace evendar
             Form form = new FormRecoverAccount();
             form.ShowDialog(this);
             this.Close();
+        }
+
+        private void labelWrong_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

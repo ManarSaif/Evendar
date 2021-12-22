@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using evendar.DB;
+using evendar.Accounts;
 using evendar.MainPage;
 namespace evendar
 {
@@ -19,6 +20,16 @@ namespace evendar
         }
 
         private void UserControlCode_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCode_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
         {
 
         }
