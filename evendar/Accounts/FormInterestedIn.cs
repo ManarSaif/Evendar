@@ -16,5 +16,10 @@ namespace evendar.Accounts
         {
             InitializeComponent();
         }
+
+        private void FormInterestedIn_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
